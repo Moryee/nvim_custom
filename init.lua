@@ -499,16 +499,31 @@ do
   -- NOTE: You can install multiple plugins at once
   vim.pack.add(telescope_plugins)
 
+  local actions = require 'telescope.actions'
+
   -- See `:help telescope` and `:help telescope.setup()`
   require('telescope').setup {
     -- You can put your default mappings / updates / etc. in here
     --  All the info you're looking for is in `:help telescope.setup()`
-    --
-    -- defaults = {
-    --   mappings = {
-    --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-    --   },
-    -- },
+    defaults = {
+      mappings = {
+        -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        i = {
+          ['<M-j>'] = actions.preview_scrolling_left,
+          ['<M-k>'] = actions.move_selection_next,
+          ['<M-l>'] = actions.move_selection_previous,
+          ['<M-;>'] = actions.preview_scrolling_right,
+        },
+        n = {
+          ['j'] = actions.preview_scrolling_left,
+          ['k'] = actions.preview_scrolling_down,
+          ['l'] = actions.preview_scrolling_up,
+          [';'] = actions.preview_scrolling_right,
+          ['<M-k>'] = actions.move_selection_next,
+          ['<M-l>'] = actions.move_selection_previous,
+        },
+      },
+    },
     -- pickers = {}
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
