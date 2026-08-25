@@ -7,17 +7,23 @@ vim.pack.add {
   'https://github.com/MunifTanjim/nui.nvim',
 }
 
+vim.keymap.set('n', '<leader>nb', '<Cmd>Neotree buffers<CR>', { desc = 'NeoTree buffers'})
+vim.keymap.set('n', '<leader>ng', '<Cmd>Neotree git_status<CR>', { desc = 'NeoTree git_status'})
+vim.keymap.set('n', '<leader>nf', '<Cmd>Neotree filesystem<CR>', { desc = 'NeoTree filesystem'})
 vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
-vim.keymap.set('n', '|', '<Cmd>Neotree buffers<CR>', { desc = 'NeoTree buffers', silent = true })
-vim.keymap.set('n', '<leader>gs', '<cmd>Neotree git_status<CR>', { desc = '[G]it [S]tatus' })
 
 require('neo-tree').setup {
   window = {
     mappings = {
-      ['\\'] = 'close_window',
       ['w'] = 'toggle_node',
       -- ['<space>'] = 'open',
       ['<space>'] = 'open_nofocus',
+      ['h'] = 'none',
+      ['j'] = 'none',
+      ['k'] = 'none',
+      ['l'] = 'none',
+      [';'] = 'none',
+      ['\''] = 'focus_preview',
     },
   },
   commands = {
