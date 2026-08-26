@@ -1013,7 +1013,7 @@ do
   require 'custom.plugins.neo-tree'
   -- Custom user plugins
   require 'custom.plugins.copy_matches'
-  require 'custom.plugins.diff-unsaved'
+  require 'custom.plugins.diff-custom'
   require 'custom.plugins.remap-hjkl'
   require 'custom.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
