@@ -1012,6 +1012,7 @@ do
   require 'custom.plugins.lint'
   require 'custom.plugins.autopairs'
   require 'custom.plugins.neo-tree'
+  require 'custom.plugins.diffview'
   -- Custom user plugins
   require 'custom.plugins.copy_matches'
   require 'custom.plugins.diff-custom'
