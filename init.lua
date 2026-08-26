@@ -1012,12 +1012,14 @@ do
   require 'custom.plugins.lint'
   require 'custom.plugins.autopairs'
   require 'custom.plugins.neo-tree'
+  require 'custom.plugins.gitsigns'
+  require 'custom.plugins.vim-fugitive'
   require 'custom.plugins.diffview'
+
   -- Custom user plugins
   require 'custom.plugins.copy_matches'
   require 'custom.plugins.diff-custom'
   require 'custom.plugins.remap-hjkl'
-  require 'custom.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
