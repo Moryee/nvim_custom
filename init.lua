@@ -1007,19 +1007,19 @@ do
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'custom.plugins.debug'
-  require 'custom.plugins.indent_line'
-  require 'custom.plugins.lint'
-  require 'custom.plugins.autopairs'
-  require 'custom.plugins.neo-tree'
-  require 'custom.plugins.gitsigns'
-  require 'custom.plugins.vim-fugitive'
-  require 'custom.plugins.diffview'
+  -- require 'plugins.third_party.debug'
+  require 'plugins.third_party.indent_line'
+  require 'plugins.third_party.lint'
+  require 'plugins.third_party.autopairs'
+  -- require 'plugins.third_party.neo-tree'
+  require 'plugins.third_party.neo-tree'
+  require 'plugins.third_party.gitsigns'
+  require 'plugins.third_party.diffview'
 
   -- Custom user plugins
-  require 'custom.plugins.copy_matches'
-  require 'custom.plugins.diff-custom'
-  require 'custom.plugins.remap-hjkl'
+  require 'plugins.custom.copy_matches'
+  require 'plugins.custom.diff-custom'
+  require 'plugins.custom.remap-hjkl'
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
