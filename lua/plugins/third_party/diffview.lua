@@ -16,6 +16,7 @@ require('diffview').setup {
       { 'n', 'o', actions.select_entry, { desc = 'Open the diff for the selected entry' } },
       { 'n', ';', actions.select_entry, { desc = 'Open the diff for the selected entry' } },
       { 'n', 'w', actions.select_entry, { desc = 'Open the diff for the selected entry' } },
+      { 'n', 'e', actions.select_entry, { desc = 'Open the diff for the selected entry' } },
     },
   },
 }
