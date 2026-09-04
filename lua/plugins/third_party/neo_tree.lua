@@ -16,7 +16,7 @@ require('neo-tree').setup {
   window = {
     mappings = {
       ['w'] = 'toggle_node',
-      -- ['<space>'] = 'open',
+      ['<space>'] = 'none',
       ['e'] = 'open_nofocus',
       ['W'] = 'close_node',
       ['E'] = 'toggle_auto_expand_width',
