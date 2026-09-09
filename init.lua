@@ -1,25 +1,4 @@
 --[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
-
 What is Kickstart?
 
   Kickstart.nvim is *not* a distribution.
@@ -84,41 +63,31 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- TODO: add unused plugins discovery and logging it
+-- into messages during launch.
+
+-- Check LIGHT_MODE env argument
+local is_light_mode = vim.env.LIGHT_MODE == '1'
+
+-- Always load core and custom plugins
 require 'plugins.custom.core'
-require 'plugins.third_party.core'
+require 'plugins.custom.remap_hjkl'
 
--- ============================================================
--- SECTION 10: OPTIONAL EXAMPLES / NEXT STEPS
--- custom.plugins.* examples
--- ============================================================
-do
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
+if not is_light_mode then
+  require 'plugins.third_party.core'
 
-  -- NOTE: Next step on yr Neovim journey: Addonfigure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'plugins.third_party.debug'
   require 'plugins.third_party.indent_line'
   require 'plugins.third_party.lint'
   require 'plugins.third_party.autopairs'
   require 'plugins.third_party.neo_tree'
   require 'plugins.third_party.gitsigns'
   require 'plugins.third_party.diffview'
-
-  -- Custom user plugins
-  require 'plugins.custom.copy_matches'
-  require 'plugins.custom.diff_custom'
-  require 'plugins.custom.remap_hjkl'
-
-  -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- require 'custom.plugins'
+  -- require 'plugins.third_party.avante' -- TODO: remove later
+  require 'plugins.third_party.codecompanion'
 end
+
+require 'plugins.custom.copy_matches'
+require 'plugins.custom.diff_custom'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 --u
