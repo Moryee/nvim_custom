@@ -88,8 +88,8 @@ require('avante').setup {
           local last_content = msgs[#msgs].content
           local text = type(last_content) == "string" and last_content or (type(last_content) == "table" and last_content[1].text or "")
 
-          if text:find(constants.avante_custom_commands.commit) then
-            local file = io.open(constants.avante_custom_prompts.commit_message, "r")
+          if text:find(constants.ai_custom_commands.commit) then
+            local file = io.open(constants.ai_custom_prompts.commit_message, "r")
             if file then
               local content = file:read("*a")
               file:close()

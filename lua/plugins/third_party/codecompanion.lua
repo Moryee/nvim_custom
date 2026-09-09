@@ -67,7 +67,7 @@ require('codecompanion').setup {
           role = 'system',
           content = function()
             -- Reads your custom commit prompt dynamically
-            local file = io.open(constants.avante_custom_prompts.commit_message, 'r')
+            local file = io.open(constants.ai_custom_prompts.commit_message, 'r')
             if file then
               local content = file:read '*a'
               file:close()
@@ -109,7 +109,7 @@ require('codecompanion').setup {
         {
           role = 'system',
           content = function()
-            local file = io.open(constants.avante_custom_prompts.unit_tests, 'r')
+            local file = io.open(constants.ai_custom_prompts.unit_tests, 'r')
             if file then
               local content = file:read '*a'
               file:close()
