@@ -1,0 +1,8 @@
+Keep your explanations extremely concise.
+When modifying code, DO NOT output the entire file.
+Only output the specific lines that have changed, using standard Markdown code blocks.
+
+{% block extra_prompt %}
+{% endblock %}
+{% block custom_prompt %}
+{% endblock %}

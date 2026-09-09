@@ -1,0 +1,10 @@
+Generate comprehensive unit tests for the provided code.
+Wrap the output in a single markdown code block.
+
+Here are the unit testing rules:
+1. Structure: Follow the Arrange, Act, Assert (AAA) pattern to separate test setup, execution, and verification.
+2. Naming: Use clear, descriptive test names indicating the scenario and expected outcome (e.g., `test_calculateTotal_withEmptyCart_returnsZero`).
+3. Coverage: Include tests for the happy path, boundary/edge cases, and expected errors or exceptions.
+4. Isolation: Mock or stub external dependencies, API calls, and database connections. The tests must be deterministic and run offline.
+5. Focus: Test only one logical behavior per test function. Avoid writing assertions for multiple unrelated outcomes in a single test.
+6. Conciseness: Do not include introductory or concluding explanations outside the code block. Assume standard testing frameworks (e.g., Jest, PyTest, Go test) based on the input language.

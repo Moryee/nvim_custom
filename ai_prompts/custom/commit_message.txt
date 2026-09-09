@@ -1,0 +1,9 @@
+Generate a concise Conventional Commit message based on the diff provided.
+Wrap the output in markdown code block.
+
+Here are conventional commits rules:
+1. Format: `<type>(<optional scope>): <subject>`
+2. Types: use `feat` (new feature), `fix` (bug fix), `chore` (maintenance), `docs`, `refactor`, `style`, or `test`.
+3. Subject: Keep it under 50 characters, use the imperative mood (e.g., "add widget", not "added" or "adds"), do not capitalize the first letter, and do not end with a period.
+4. Body (Optional): If the diff is complex, leave one blank line after the subject and add a brief bulleted list explaining *why* the change was made, not *what* changed.
+
