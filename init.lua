@@ -72,6 +72,7 @@ local is_light_mode = vim.env.LIGHT_MODE == '1'
 -- Always load core and custom plugins
 require 'plugins.custom.core'
 require 'plugins.custom.remap_hjkl'
+require 'plugins.custom.highlight_selection'
 
 if not is_light_mode then
   require 'plugins.third_party.core'
