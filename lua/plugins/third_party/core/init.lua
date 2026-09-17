@@ -33,7 +33,7 @@ do
   require 'plugins.third_party.core.which_key'
 
   -- [[ Colorscheme ]]
-  require 'plugins.third_party.core.colorscheme'
+  require 'plugins.third_party.core.custom_colorscheme'
 
   -- Highlight todo, notes, etc in comments
   require 'plugins.third_party.core.todo_comments'
