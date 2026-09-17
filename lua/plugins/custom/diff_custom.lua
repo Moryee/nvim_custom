@@ -31,7 +31,14 @@ local function diff_buffer_against(target)
       vim.notify("File not found in git index (is it tracked?)", vim.log.levels.WARN)
       return
     end
+  elseif target == 'head' then
+    old_content = vim.fn.system({ 'git', 'show', 'HEAD:./' .. file })
+    if vim.v.shell_error ~= 0 then
+      vim.notify("File not found in git HEAD (is it tracked?)", vim.log.levels.WARN)
+      return
+    end
   end
+
 
   -- 2. Get the NEW content (What the RAM buffer WILL look like when saved)
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
@@ -103,7 +110,12 @@ vim.api.nvim_create_user_command('DiffIndex', function()
   diff_buffer_against('index')
 end, { desc = 'Diff buffer against git index (staged)' })
 
+vim.api.nvim_create_user_command('DiffHead', function()
+  diff_buffer_against('head')
+end, { desc = 'Diff buffer against git HEAD' })
+
 vim.keymap.set('n', '<leader>gu', '<cmd>DiffUnsaved<CR>', { desc = '[G]it diff [U]nsaved (disk)' })
-vim.keymap.set('n', '<leader>gU', '<cmd>DiffIndex<CR>', { desc = '[G]it diff [D]isk/Index' })
+vim.keymap.set('n', '<leader>gi', '<cmd>DiffIndex<CR>', { desc = '[G]it diff [I]ndex (staged)' })
+vim.keymap.set('n', '<leader>gU', '<cmd>DiffHead<CR>', { desc = '[G]it diff [U]HEAD' })
 
 
