@@ -83,7 +83,7 @@ require('codecompanion').setup {
             local diff = vim.fn.system 'git diff --staged'
             if diff == '' then return 'There are no staged changes. Please stage files first.' end
 
-            -- Grab the last 5 commits for context (concise format)
+            -- TODO: grab last 10 commits with full commit messages
             local log_cmd = 'git log -n 5 --oneline 2>/dev/null'
             local logs = vim.fn.system(log_cmd)
 
@@ -96,7 +96,7 @@ require('codecompanion').setup {
         },
       },
     },
-        ['[cstm] Generate Tests'] = {
+    ['[cstm] Generate Tests'] = {
       strategy = 'chat',
       interaction = 'chat',
       description = '[cstm] Generate unit tests (manual input)',
@@ -120,10 +120,11 @@ require('codecompanion').setup {
         },
         {
           role = 'user',
-          content = "Code to test:\n\nExample:\n",
+          content = 'Code to test:\n\nExample:\n',
         },
       },
     },
+    -- TODO: add branch summary and pull request review
   },
 }
 
