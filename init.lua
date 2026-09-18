@@ -87,7 +87,7 @@ if not is_light_mode then
   require 'plugins.third_party.codecompanion'
 end
 
-require 'plugins.custom.copy_matches'
+require 'plugins.custom.cmd_copy_matches'
 require 'plugins.custom.diff_custom'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
