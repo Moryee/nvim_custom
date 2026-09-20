@@ -44,4 +44,5 @@ require('neo-tree').setup {
       hide_gitignored = false, -- Optional: also show files ignored by git
     },
   },
+  git_status_async = true, -- ensure git status runs async, not sync
 }
