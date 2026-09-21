@@ -13,7 +13,15 @@ add_dependency('codecompanion', { {
 
 require('codecompanion').setup {
   interactions = {
-    chat = { adapter = 'openrouter' },
+    chat = {
+      adapter = 'openrouter',
+      sessions = {
+        enabled = true,
+        autosave = true,
+        continuous_save = true,
+        save_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "codecompanion", "sessions"),
+      },
+    },
     inline = { adapter = 'openrouter' },
     agent = { adapter = 'openrouter' },
   },
