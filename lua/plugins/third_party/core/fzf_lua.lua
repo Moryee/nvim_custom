@@ -31,6 +31,8 @@ fzf.setup {
       -- ['alt-;'] = 'preview-page-down',
       ['alt-j'] = 'half-page-down',
       ['alt-;'] = 'half-page-up',
+      ['ctrl-u'] = 'preview-page-up',
+      ['ctrl-d'] = 'preview-page-down',
     },
   },
   winopts = {
@@ -69,7 +71,8 @@ end, { desc = '[S]earch [R]ecent files in current project' })
 
 
 vim.keymap.set('n', '<leader>s.', fzf.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>sc', fzf.commands, { desc = '[S]earch [C]ommands' })
+vim.keymap.set('n', '<leader>sc', fzf.git_bcommits, { desc = '[S]earch b[C]commits' })
+vim.keymap.set('n', '<leader>sC', fzf.commands, { desc = '[S]earch [C]ommands' })
 vim.keymap.set('n', '<leader><leader>', fzf.buffers, { desc = '[ ] Find existing buffers' })
 
 -- LSP Attach auto-command
