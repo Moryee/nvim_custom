@@ -1,4 +1,4 @@
-vim.api.nvim_create_user_command('DeleteUnusedPlugins', function()
+vim.api.nvim_create_user_command('UserDeleteUnusedPlugins', function()
   local unused = {}
   for _, p in ipairs(vim.pack.get()) do
     if not p.active then
