@@ -1,0 +1,23 @@
+Colorscheme
++ adjust colorscheme
+
+fzf
++ add folder context to fzf - "<search> -- frontend/** !node_modules"
+
+neo-tree
+- add convenient way to switch between views
++ investigate git lag when saving files
+
+custom scripts
+- consider using "q" everywhere to exit windows
+
+other
++ add light mode
++ add plugins cleanup command
+- add todo notes parser
+- try to find alternative to vscode cursor
+
+CodeCompanion
+- add apply code from github diff in codecompanion
+- save chat history to project folder
+- display useful information in "Open Chats" menu list

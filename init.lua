@@ -85,9 +85,15 @@ if not is_light_mode then
   require 'plugins.third_party.diffview'
   -- require 'plugins.third_party.avante' -- TODO: remove later
   require 'plugins.third_party.codecompanion'
+
+  -- NOTE: Cleanup command must be accesible always in the full
+  -- access mode to prevent removal of plugins that are used, but
+  -- not actually loaded.
+  require 'plugins.custom.cmd_delete_unused_plugins'
 end
 
-require 'plugins.custom.copy_matches'
+require 'plugins.custom.cmd_copy_matches'
+require 'plugins.custom.cmd_copy_path'
 require 'plugins.custom.diff_custom'
 
 -- The line beneath this is called `modeline`. See `:help modeline`

@@ -67,7 +67,7 @@ Color.new('green',     '#8bd49c') -- color2
 Color.new('yellow',    '#ebbf83') -- color3
 Color.new('blue',      '#5ec4ff') -- color4
 Color.new('magenta',   '#c06ece') -- color5
-Color.new('cyan_dark', '#008b94') -- color6 
+Color.new('cyan_dark', '#008b94') -- color6
 Color.new('cyan',      '#70e1e8') -- color14 (bright cyan)
 
 local colors = {
@@ -76,6 +76,7 @@ local colors = {
   c_variable = c.cyan:light(),
   c_constant = c.cyan_dark:light(),
   c_special_keywords = c.magenta,
+  c_highlight = c.bg:light(),
   -- Other
   c_number = c.fg,
   c_string = c.blue:dark():dark(),
@@ -86,9 +87,9 @@ local colors = {
 -- Group.new('Normal', c.fg, c.bg)
 Group.new('Normal', c.white, c.bg)
 Group.new('LineNr', c.gray, c.none)
-Group.new('CursorLine', c.none, c.bg:light())
-Group.new('CursorLineNr', c.yellow, c.bg:light(), s.bold)
-Group.new('Visual', c.none, c.gray:dark():dark())
+Group.new('CursorLine', c.none, colors.c_highlight)
+Group.new('CursorLineNr', c.yellow, colors.c_highlight, s.bold)
+Group.new('Visual', c.none, colors.c_highlight)
 
 -- Splits and Borders
 Group.new('VertSplit', c.gray:dark(), c.bg)
@@ -166,9 +167,9 @@ Group.new('DiagnosticUnderlineError', c.none, c.none, s.undercurl, c.red)
 Group.new('DiagnosticUnderlineWarn', c.none, c.none, s.undercurl, c.yellow)
 
 Group.new('LspReferenceWrite', c.bg, c.yellow)
--- Group.new('LspReferenceRead', c.bg, c.gray)
-Group.new('LspReferenceRead', c.none, c.gray:dark():dark())
-Group.new('VisualSelectionMatch', c.none, c.gray:dark():dark())
+Group.new('LspReferenceRead', c.none, colors.c_highlight:light())
+Group.new('LspReferenceText', c.none, colors.c_highlight:light())
+Group.new('VisualSelectionMatch', c.none, colors.c_highlight)
 
 -- ==========================================
 -- 5. Neotree plugin
@@ -185,7 +186,7 @@ Group.new('Added', c.green, c.none)
 -- 6. MATCHING PARENTHESES
 -- ==========================================
 -- When your cursor is on a bracket, this highlights the matching one
-Group.new('MatchParen', c.yellow, c.gray:dark(), s.bold) 
+Group.new('MatchParen', c.yellow, c.gray:dark(), s.bold)
 
 -- ==========================================
 -- 7. STATUS BAR
