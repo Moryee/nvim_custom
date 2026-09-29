@@ -93,6 +93,7 @@ if not is_light_mode then
 end
 
 require 'plugins.custom.cmd_copy_matches'
+require 'plugins.custom.cmd_copy_path'
 require 'plugins.custom.diff_custom'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
